@@ -27,75 +27,10 @@
 
 </head>
 <body>
-         <?php                         session_start();
-         require_once('publicar.php');             
-         $findArt = new publicar;       //instanciando a classe para buscar os dados na tabela content
-
-    if(isset($_GET['del'])){
-        if(is_numeric($_GET['del'])){
-            $id = $_GET['del'];
-            $findArt->setId($id);
-            $findArt->delete();
-        }
-
-    }
-
-    if(isset($_GET['id'])){         //pega id da url
-        $id = addslashes($_GET['id']);
-        $findArt->setId($id);
-    }else{
-        $id = 1; //artigo de boas vindas
-        $findArt->setId($id);
-        }
-     ?>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><img class="imagem" height="60" src= "logo/BestGames3.png"> </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Vendas</a>
-                    </li>
-                    <li>
-                        <a href="trocas.php">Trocas</a>
-                    </li>
-                    <li> 
-                        <a href="conta">Contato</a>
-                    </li>
-              </ul>
-            
-             <ul class="nav navbar-nav navbar-right">
-      <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    
-      <li> 
-         <a href="cadastrar.php">Cadastrar</a>
-      </li>
-              </ul>
-
-     </div>
-
-
-
-
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+<?php
+    include("topo.php");
+?>
+   
 
     <!-- Page Content -->
     <div class="container">
@@ -105,15 +40,15 @@
             <div class="col-md-3">
                 <p class="lead">Consoles</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">PS3</a>
-                    <a href="#" class="list-group-item">PS4</a>
-                    <a href="#" class="list-group-item">Xbox 360</a>
-                    <a href="#" class="list-group-item">Xbox One</a>
-                    <a href="#" class="list-group-item">Wii</a>
-                    <a href="#" class="list-group-item">Wii U</a>
-                    <a href="#" class="list-group-item">PS Vita</a>
-                    <a href="#" class="list-group-item">3Ds</a>
-                    <a href="#" class="list-group-item">Dicas</a>
+                    <a href="../plataformas/ps3.html" class="list-group-item">PS3</a>
+                    <a href="../plataformas/ps4.html" class="list-group-item">PS4</a>
+                    <a href="../plataformas/xbox360.html" class="list-group-item">Xbox 360</a>
+                    <a href="../plataformas/xboxone.html" class="list-group-item">Xbox One</a>
+                    <a href="../plataformas/wii.html" class="list-group-item">Wii</a>
+                    <a href="../plataformas/wiiu.html" class="list-group-item">Wii U</a>
+                    <a href="../plataformas/psvita.html" class="list-group-item">PS Vita</a>
+                    <a href="../plataformas/3ds.html" class="list-group-item">3Ds</a>
+                    <a href="" class="list-group-item">Dicas</a>
                 </div>
             </div>
 
@@ -310,16 +245,33 @@
         <hr>
 
         <!-- Footer -->
-        <footer>
+        <br>
+<footer>
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Nosso Website 2016</p>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#vendas.php">Vendas</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="trocas.php">Trocas</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="contato.php">Contato</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Nosso Website 2016. Todos os Direitos Reservados.</p>
                 </div>
             </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
